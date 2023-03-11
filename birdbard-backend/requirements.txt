@@ -1,0 +1,10 @@
+toolz
+pandas
+openai
+tiktoken
+tenacity
+plotly
+tqdm
+umap-learn
+hdbscan
+sklearn

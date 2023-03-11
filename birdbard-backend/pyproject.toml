@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "birdbard"
+version = "0.1.0"
+description = "Turns your tweets into a coherent body of owrk"
+authors = ["TheExGenesis <theexgenesis@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+toolz = "^0.12.0"
+pandas = "^1.5.3"
+openai = "^0.26.5"
+tiktoken = "^0.2.0"
+tenacity = "^8.2.1"
+plotly = "^5.13.1"
+tqdm = "^4.64.1"
+hdbscan = "^0.8.29"
+scikit-learn = "^1.2.1"
+ipykernel = "^6.21.2"
+surrealdb = {path = "../surrealdb.py", develop = true}
+pinecone-client = "^2.2.1"
+tweepy = "^4.12.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

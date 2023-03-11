@@ -1,0 +1,7 @@
+data/*
+.tt_*
+.openai*
+.DS_Store
+.*_key
+.*_token
+.*_secret

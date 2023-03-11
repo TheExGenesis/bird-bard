@@ -1,0 +1,182 @@
+# %%
+
+from typing import List, Optional, TypedDict
+from tweepy.tweet import Tweet as tweepy_Tweet
+from tweepy.user import User as tweepy_User
+
+
+class User(TypedDict):
+    id: int
+    id_str: str
+    name: str
+    screen_name: str
+    location: str
+    description: str
+    url: str
+    entities: str
+    protected: bool
+    followers_count: int
+    friends_count: int
+    listed_count: int
+    created_at: str
+    favourites_count: int
+    utc_offset: str
+    time_zone: str
+    geo_enabled: bool
+    verified: bool
+    statuses_count: int
+    lang: str
+    contributors_enabled: bool
+    is_translator: bool
+    is_translation_enabled: bool
+    profile_background_color: str
+    profile_background_image_url: str
+    profile_background_image_url_https: str
+    profile_background_tile: bool
+    profile_image_url: str
+    profile_image_url_https: str
+    profile_banner_url: str
+    profile_link_color: str
+    profile_sidebar_border_color: str
+    profile_sidebar_fill_color: str
+    profile_text_color: str
+    profile_use_background_image: bool
+    has_extended_profile: bool
+    default_profile: bool
+    default_profile_image: bool
+    following: bool
+    follow_request_sent: bool
+    notifications: bool
+    translator_type: str
+    withheld_in_countries: list    
+
+class RetweetedStatus(TypedDict):
+    created_at: str
+    id: int
+    id_str: str
+    text: str
+    truncated: bool
+    entities: str
+    source: str
+    in_reply_to_status_id: str
+    in_reply_to_status_id_str: str
+    in_reply_to_user_id: str
+    in_reply_to_user_id_str: str
+    in_reply_to_screen_name: str
+    user: User
+    geo: str
+    coordinates: str
+    place: str
+    contributors: str
+    is_quote_status: bool
+    retweet_count: int
+    favorite_count: int
+    favorited: bool
+    retweeted: bool
+    lang: str
+
+class QuotedStatus(TypedDict):
+    created_at: str
+    id: int
+    id_str: str
+    text: str
+    truncated: bool
+    entities: str
+    source: str
+    in_reply_to_status_id: str
+    in_reply_to_status_id_str: str
+    in_reply_to_user_id: str
+    in_reply_to_user_id_str: str
+    in_reply_to_screen_name: str
+    user: User
+    geo: str
+    coordinates: str
+    place: str
+    contributors: str
+    is_quote_status: bool
+    retweet_count: int
+    favorite_count: int
+    favorited: bool
+    retweeted: bool
+    lang: str
+    
+class Coordinates(TypedDict):
+    coordinates: any
+    type: str
+
+class Place(TypedDict):
+    attributes: str
+    bounding_box: Coordinates
+    country: str
+    country_code: str
+    full_name: str
+    id: str
+    name: str
+    place_type: str
+    url: str
+
+class Entities(TypedDict):
+    hashtags: list
+    urls: list
+    user_mentions: list
+    media: list
+    symbols: list
+    polls: list
+
+class ExtendedEntities(TypedDict):
+    media: list
+
+class Rule(TypedDict):
+    id: int
+    id_str: str
+    tag: str
+
+class Tweet(TypedDict):
+    created_at: str
+    id: int
+    id_str: str
+    text: str
+    source: str
+    truncated: bool
+    in_reply_to_status_id: str
+    in_reply_to_status_id_str: str
+    in_reply_to_user_id: str
+    in_reply_to_user_id_str: str
+    in_reply_to_screen_name: str
+    user: User
+    coordinates: Coordinates
+    place: Place
+    quoted_status_id: str
+    quoted_status_id_str: str
+    is_quote_status: bool
+    quoted_status: QuotedStatus
+    retweeted_status: RetweetedStatus
+    quote_count: int
+    reply_count: int
+    retweet_count: int
+    favorite_count: int
+    entities: Entities
+    extended_entities: ExtendedEntities 
+    favorited: bool
+    retweeted: bool
+    lang: str
+    matching_rules: List[Rule]
+    # optional:
+    current_user_retweet: any
+    scopes: any
+    withheld_copyright: bool
+    withheld_in_countries: list
+    withheld_scope: str
+
+class ArchiveTweet(TypedDict):
+    pass
+
+class VectorSearchTweet(TypedDict):
+    id: str
+    full_text: str
+    created_at: str
+    favorite_count: int
+    retweet_count: int
+    in_reply_to_status_id_str: str
+    in_reply_to_user_id_str: str
+    in_reply_to_screen_name: str
